@@ -40,3 +40,14 @@ func _process(delta):
 #	pass
 
 
+
+
+func _on_Player_body_entered(body:RigidBody2D):
+	body.get_node("CollisionShape2D").disabled = true
+	body.gravity_scale = 0
+	call_deferred("reparent_body", body)
+
+func reparent_body(body:RigidBody2D):
+	body.get_parent().remove_child(body)
+	add_child(body)
+	

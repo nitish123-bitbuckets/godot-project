@@ -10,4 +10,4 @@ func _ready():
 	position = Vector2(xcoord, 50)
 	
 func _on_Burger_body_entered(body):
-	emit_signal("hit")
+	print(emit_signal("hit"))

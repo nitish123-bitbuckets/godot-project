@@ -19,7 +19,6 @@ height = 38.7471
 
 [sub_resource type="StreamTexture" id=3]
 flags = 4
-load_path = "res://.import/16106394852382921 (1).png-d3a0667b6f9696001a6fa686494e9076.stex"
 
 [node name="Player" type="Area2D"]
 collision_mask = 1048575
@@ -31,7 +30,7 @@ __meta__ = {
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "walk"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -52,10 +51,10 @@ __meta__ = {
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer"]
 margin_right = 900.0
-margin_bottom = 519.0
 texture = SubResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+[connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
